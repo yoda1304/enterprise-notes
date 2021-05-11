@@ -26,4 +26,16 @@ class Badge < ApplicationRecord
 
     end
 
+    def courses_increment
+
+        self.courses_progress += 1
+        if self.courses_progress >= self.courses_max_xp
+            self.courses_badge = true
+            self.courses_level += 1
+            self.courses_progress = 0
+        end
+        self.save!
+
+    end
+
 end

@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+    before_action :check_login, only: :search
 
     def index
         @notes = Note.last(5)

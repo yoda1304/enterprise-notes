@@ -21,14 +21,19 @@
 </p>
 
 <p>
-  <strong>Role</strong>
+  <strong>Role:</strong>
   <%= @user.role %>
 </p>
 
+<p>
+  <strong>Courses:</strong>
+  <%= @user.course_users.map{|c| c.course.code} %>
+</p>
+
+<p><%=link_to "Add more courses", new_course_user_path%></p>
 
 <p>
-  <strong>Badges</strong>
-  <%= @user.badge.login_badge %>
+  <strong>Badges:</strong>
 </p>
 
 <% if @user.badge.login_badge %>
@@ -39,7 +44,7 @@
 <%else%>
   <%= image_tag "login_grey.png" %>
   <p>You've earned <%=@user.badge.login_progress%>/<%= @user.badge.login_max_xp%> XP to get this badge!<br></p>
-  <p>Add more courses to your notes to get the badge!</p>
+  <p>Add more courses to your profile to get the badge!</p>
 <%end%>
 <br>
 <% if @user.badge.courses_badge %>

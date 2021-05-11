@@ -1,0 +1,25 @@
+<%= form_with(model: @course_note, local: true) do |form| %>
+  <% if @course_note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course_note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul>
+        <% @course_note.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <%= collection_select(:course_note, :course_id, Course.all, :id, :code, prompt: true) %>
+  </div>
+  <div class="field">
+    <%= form.hidden_field :note_id, value: @note.id %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

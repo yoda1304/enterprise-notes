@@ -11,9 +11,16 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @note.user_id %>
+  <strong>Courses:</strong>
+  <%= @note.course_notes.map{|c| c.course.code} %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= @note.user.proper_name %>
+</p>
+<p>
+<%= link_to "Add a new course to this note", new_course_note_path(note_id: @note.id) %>
+</p>
 <%= link_to 'Edit', edit_note_path(@note) %> |
 <%= link_to 'Back', notes_path %>

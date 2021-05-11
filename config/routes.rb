@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :badges
+  resources :course_users
+  resources :course_notes
 
   get 'signup' => 'users#new', :as => :signup
   get 'login' => 'sessions#new', :as => :login

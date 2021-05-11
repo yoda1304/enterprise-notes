@@ -1,6 +1,6 @@
 Resources Used:
 
-The main resource I'm using on this is my final project for a previous class,
+The main resource I'm using on this is the content & my final project for a previous class,
 which was a hypothetical inventory/personel management system for an ice cream
 parlor. It had content hosting and submission (though not in this social sense),
 as well as authentication/authorization and a basic search function. I'm pulling 

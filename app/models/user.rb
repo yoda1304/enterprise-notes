@@ -2,6 +2,8 @@ class User < ApplicationRecord
     after_save :create_badges
 
     has_many :notes
+    has_many :course_users
+    has_many :courses, through: :course_users
     has_one :badge
     has_secure_password
 
