@@ -55,7 +55,7 @@
 <%else%>
   <%= image_tag "courses_grey.png" %>
   <p>You've earned <%=@user.badge.courses_progress%>/<%= @user.badge.courses_max_xp%> XP to get this badge!<br></p>
-  <p>Add more courses to your notes to get the badge!<br></p>
+  <p>Add more courses to your profile to get the badge!<br></p>
 <%end%>
 <br>
 <% if @user.badge.posts_badge %>
