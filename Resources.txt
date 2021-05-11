@@ -24,3 +24,12 @@ Login/Signup:
 https://github.com/CanCanCommunity/cancancan
 https://67272.cmuis.net/labs/10
 https://stackoverflow.com/questions/4834809/adding-a-column-to-an-existing-table-in-a-rails-migration/4834906
+
+Badges:
+https://support.efrontlearning.com/hc/article_attachments/360001009472/supab.png
+https://stackoverflow.com/questions/4039280/rails-how-do-i-call-self-save-in-my-model-and-have-it-persist-in-the-database
+https://laravel.io/forum/08-14-2014-once-again-difference-between-hasone-has-many-and-belongstobelongstomany
+
+Immediate Immersion:
+https://stackoverflow.com/questions/6423966/ruby-how-to-select-some-characters-from-string/34974269
+https://ruby-doc.org/core-2.6/String.html#method-i-to_str

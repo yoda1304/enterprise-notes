@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
 
     def index
-        @notes = Note.all
-        @users = User.all
+        @notes = Note.last(5)
     end
 
     def search
