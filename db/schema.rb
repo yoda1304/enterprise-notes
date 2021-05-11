@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_231920) do
+ActiveRecord::Schema.define(version: 2021_05_11_032535) do
+
+  create_table "badges", force: :cascade do |t|
+    t.boolean "login_badge", default: false
+    t.integer "login_progress", default: 0
+    t.integer "login_level", default: 0
+    t.boolean "posts_badge", default: false
+    t.integer "posts_progress", default: 0
+    t.integer "posts_level", default: 0
+    t.boolean "courses_badge", default: false
+    t.integer "courses_progress", default: 0
+    t.integer "courses_level", default: 0
+    t.integer "profile_level", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.integer "login_max_xp", default: 3
+    t.integer "courses_max_xp", default: 5
+    t.integer "posts_max_xp", default: 10
+    t.index ["user_id"], name: "index_badges_on_user_id"
+  end
 
   create_table "course_notes", force: :cascade do |t|
     t.integer "course_id", null: false
@@ -66,6 +86,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_231920) do
     t.string "role", default: "member"
   end
 
+  add_foreign_key "badges", "users"
   add_foreign_key "course_notes", "courses"
   add_foreign_key "course_notes", "notes"
   add_foreign_key "course_users", "courses"

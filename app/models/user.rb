@@ -1,5 +1,8 @@
 class User < ApplicationRecord
+    after_save :create_badges
+
     has_many :notes
+    has_one :badge
     has_secure_password
 
     scope :search, -> (term) { where('first_name LIKE ? OR last_name LIKE ?', "#{term}%", "#{term}%")}
@@ -19,6 +22,10 @@ class User < ApplicationRecord
 
         first_name + " " + last_name
 
+    end
+
+    def create_badges
+        Badge.create(user_id: self.id)
     end
 
 end

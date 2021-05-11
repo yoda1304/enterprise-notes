@@ -21,9 +21,48 @@
 </p>
 
 <p>
-  <strong>role:</strong>
+  <strong>Role</strong>
   <%= @user.role %>
 </p>
+
+
+<p>
+  <strong>Badges</strong>
+  <%= @user.badge.login_badge %>
+</p>
+
+<% if @user.badge.login_badge %>
+
+  <%=image_tag "login_gold.png" %>
+  <p>You've earned this badge!<br></p>
+  <p>You're level <%=@user.badge.login_level%>!<br></p>
+<%else%>
+  <%= image_tag "login_grey.png" %>
+  <p>You've earned <%=@user.badge.login_progress%>/<%= @user.badge.login_max_xp%> XP to get this badge!<br></p>
+  <p>Add more courses to your notes to get the badge!</p>
+<%end%>
+<br>
+<% if @user.badge.courses_badge %>
+
+  <%=image_tag "courses_gold.png" %>
+  <p>You've earned this badge!<br></p>
+  <p>You're level <%=@user.badge.courses_level%>!<br></p>
+<%else%>
+  <%= image_tag "courses_grey.png" %>
+  <p>You've earned <%=@user.badge.courses_progress%>/<%= @user.badge.courses_max_xp%> XP to get this badge!<br></p>
+  <p>Add more courses to your notes to get the badge!<br></p>
+<%end%>
+<br>
+<% if @user.badge.posts_badge %>
+
+  <%=image_tag "posts_gold.png" %>
+  <p>You've earned this badge!<br></p>
+  <p>You're level <%=@user.badge.postss_level%>!<br></p>
+<%else%>
+  <%= image_tag "posts_grey.png" %>
+  <p>You've earned <%=@user.badge.posts_progress%>/<%= @user.badge.posts_max_xp%> XP to get this badge!<br></p>
+  <p>Add more notes to get the badge!</p>
+<%end%>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

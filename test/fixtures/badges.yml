@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  login_badge: false
+  login_progress: 1
+  login_level: 1
+  posts_badge: false
+  posts_progress: 1
+  posts_level: 1
+  courses_badge: false
+  courses_progress: 1
+  courses_level: 1
+  profile_level: 1
+
+two:
+  login_badge: false
+  login_progress: 1
+  login_level: 1
+  posts_badge: false
+  posts_progress: 1
+  posts_level: 1
+  courses_badge: false
+  courses_progress: 1
+  courses_level: 1
+  profile_level: 1

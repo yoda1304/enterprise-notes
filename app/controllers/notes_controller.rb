@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[ show edit update destroy ]
-
+  before_action :check_login
   # GET /notes or /notes.json
   def index
     @notes = Note.all
@@ -22,11 +22,12 @@ class NotesController < ApplicationController
   # POST /notes or /notes.json
   def create
     @note = Note.new(note_params)
-
+    @user = User.find(note_params[:user_id])
     respond_to do |format|
       if @note.save
         format.html { redirect_to @note, notice: "Note was successfully created." }
         format.json { render :show, status: :created, location: @note }
+        @user.badge.posts_increment
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @note.errors, status: :unprocessable_entity }
