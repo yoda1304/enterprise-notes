@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :check_login
 
   # GET /users or /users.json
   def index
@@ -34,20 +35,15 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1 or /users/1.json
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: "User was successfully updated." }
-        format.json { render :show, status: :ok, location: @user }
+    if @current_user.update_attributes(user_params)
+      redirect_to(@current_user, :notice => 'User was successfully updated.')
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+      render :action => "edit"
       end
-    end
   end
 
-  # DELETE /users/1 or /users/1.json
+
   def destroy
     @user.destroy
     respond_to do |format|
@@ -64,6 +60,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :school, :password_digest)
+      params.require(:user).permit(:first_name, :last_name, :email, :school, :role, :password_confirmation, :password)
     end
 end

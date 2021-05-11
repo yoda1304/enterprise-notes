@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_034049) do
+ActiveRecord::Schema.define(version: 2021_05_10_231920) do
 
   create_table "course_notes", force: :cascade do |t|
     t.integer "course_id", null: false
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_034049) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "role", default: "member"
   end
 
   add_foreign_key "course_notes", "courses"

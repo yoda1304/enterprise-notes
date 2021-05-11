@@ -3,14 +3,24 @@ Resources Used:
 The main resource I'm using on this is my final project for a previous class,
 which was a hypothetical inventory/personel management system for an ice cream
 parlor. It had content hosting and submission (though not in this social sense),
-as well as authentication/authorization a basic search function. I'm pulling a
-lot of stuff from that, but it's not a 1 to 1 match where I can copy paste every-
-thing, mostly just the structural stuff thats similar across anything you throw
-together in rails. The database structure is fully original though, same with 
-anything badge related or immediate immersion.
+as well as authentication/authorization and a basic search function. I'm pulling 
+a lot of stuff from that, but it's not a 1 to 1 match where I can copy paste 
+everything, mostly just the structural stuff thats similar across anything you 
+throw together in rails. The database structure is fully original though, same 
+with anything badge related or immediate immersion.
+
+Rails Setup:
+https://stackoverflow.com/questions/7861971/generate-model-using-userreferences-vs-user-idinteger
+https://guides.rubyonrails.org/active_record_migrations.html
+https://guides.rubyonrails.org/command_line.html
+https://guides.rubyonrails.org/getting_started.html
 
 Search:
 https://stackoverflow.com/questions/14497843/gettin-500-internal-server-error-in-rails-on-ajax-request/14506685
 https://stackoverflow.com/questions/50647610/rails-render-not-showing-in-browser-despite-positive-server-reply
 ^This one fixed the hard bug
 
+Login/Signup:
+https://github.com/CanCanCommunity/cancancan
+https://67272.cmuis.net/labs/10
+https://stackoverflow.com/questions/4834809/adding-a-column-to-an-existing-table-in-a-rails-migration/4834906
