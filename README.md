@@ -9,7 +9,11 @@ The main point of the app is to showcase implementations of three design pattern
 -Gamification helps get users to do things that are valuable to both them and the developer, but don't have any sort of immediate gratification associated with them. Adding game elements to an app is a cheap way to incentivize long term benefits. In the app, each user has a set of badges that track their progress when doing certain tasks (logging in, adding courses to their profile), and give them new badges when they complete certain milestones.
 
 In order to run the app, you'll need Rails 6.0.3 and Ruby 2.5.1. by running 
+
 >bundle install
+
 you'll get the gems you need to run, then 
+
 >rails db:migrate
+
 to initialize the database, then run a server to see it go. As a side note, as the application is meant as a proof of concept for web dev design patterns, the frontend design is very, very barebones. Additionally, the database implementation of badges is janky, and in a real environment I would have badges in their own table, with a join table between users and badges to kill the many-to-many and allow flexible editing of current badges.
